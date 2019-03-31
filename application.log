@@ -1,0 +1,11 @@
+2019-04-01 00:00:15 [main] INFO  c.g.y.p.c.c.ParentalControlControllerTest - Starting ParentalControlControllerTest on bahadir-N550JV with PID 22341 (started by bahadir in /home/bahadir/dev/code/git-repos/local/movie-parental-control-service)
+2019-04-01 00:00:15 [main] DEBUG c.g.y.p.c.c.ParentalControlControllerTest - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-04-01 00:00:15 [main] INFO  c.g.y.p.c.c.ParentalControlControllerTest - No active profile set, falling back to default profiles: default
+2019-04-01 00:00:17 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-01 00:00:17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2019-04-01 00:00:17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2019-04-01 00:00:17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 12 ms
+2019-04-01 00:00:17 [main] INFO  c.g.y.p.c.c.ParentalControlControllerTest - Started ParentalControlControllerTest in 1.985 seconds (JVM running for 2.729)
+2019-04-01 00:00:17 [main] ERROR c.g.y.p.c.c.GlobalExceptionHandler - TitleNotFoundException exception has occured
+2019-04-01 00:00:17 [main] ERROR c.g.y.p.c.c.GlobalExceptionHandler - TechnicalFailureException exception has occured
+2019-04-01 00:00:17 [Thread-1] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
