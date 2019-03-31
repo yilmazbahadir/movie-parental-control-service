@@ -12,7 +12,7 @@
 .DS_Store
 
 /bin
-
+/logs
 # Maven
 log/
 target/
