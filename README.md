@@ -1,6 +1,21 @@
-# Parental Control Service API - SKY Test
+# Parental Control Service API - Sky Test
 
 Sky is developing a next generation Video on Demand platform. The aim of this project is to provide a service that prevents access to movies based on parental control level.
+
+## Code
+
+This application is developed with TDD approach. 
+Clean Code principles are applied.
+
+Technologies used:
+
+* Java 8
+* Maven
+* Spring Boot
+* Spring AOP
+* Mockito
+* Hamcrest
+* Swagger 
 
 ## Getting Started
 
@@ -17,7 +32,7 @@ These instructions will get you a copy of the project up and running on your loc
 mvn clean package
 ```
 
-## Running the tests
+## Running the automated tests
 
 ```
 mvn clean test
@@ -30,6 +45,20 @@ Parental Control Service REST API Test: com.github.yilmazbahadir.parental.contro
 
 Parental Control Service Unit Test: com.github.yilmazbahadir.parental.control.service.ParentalControlServiceTest: 
 ```
+## Manual tests
+
+```
+http://localhost:8080/api/v1/parentalcontrol/movies/godfather?controlLevel=PG
+```
+
+movieId           | controlLevel 
+------------------|-------------
+godfather         | 18 
+schindlerslist    | 15      
+12angrymen        | 12      
+thelordoftherings | PG      
+pulpfiction       | U
+      
 
 ## Deployment
 
@@ -49,7 +78,7 @@ java -jar movie-parental-control-service-1.0-SNAPSHOT.jar
 Swagger API documentation can be reached through:
 
 ```
-http://localhost:8080/swagger-ui.html
+http://localhost:8080/api/swagger-ui.html
 ```
 
 ## API Versioning
@@ -57,7 +86,7 @@ http://localhost:8080/swagger-ui.html
 URL versioning is used in this project. 
 
 ```
-/v1/parentalcontrol/movies/godfather?controlLevel=15
+/api/v1/parentalcontrol/movies/godfather?controlLevel=15
 ```
 ## Authors
 

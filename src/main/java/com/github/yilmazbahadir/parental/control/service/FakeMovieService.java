@@ -14,11 +14,11 @@ public class FakeMovieService implements MovieService {
 	private static Map<String, ParentalControlLevel> movieDB = new ConcurrentHashMap<>();
 
 	static {
-		movieDB.put("godfather", ParentalControlLevel.A18);
-		movieDB.put("schindlerslist", ParentalControlLevel.A15);
-		movieDB.put("12angrymen", ParentalControlLevel.A12);
-		movieDB.put("thelordoftherings", ParentalControlLevel.PG);
-		movieDB.put("pulpfiction", ParentalControlLevel.U);
+		movieDB.put("godfather", ParentalControlLevel.LEVEL_18);
+		movieDB.put("schindlerslist", ParentalControlLevel.LEVEL_15);
+		movieDB.put("12angrymen", ParentalControlLevel.LEVEL_12);
+		movieDB.put("thelordoftherings", ParentalControlLevel.LEVEL_PG);
+		movieDB.put("pulpfiction", ParentalControlLevel.LEVEL_U);
 	}
 
 	@Override

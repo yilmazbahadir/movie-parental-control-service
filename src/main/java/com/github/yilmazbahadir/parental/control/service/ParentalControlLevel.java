@@ -4,11 +4,11 @@ import com.github.yilmazbahadir.parental.control.exception.ControlLevelNotFoundE
 
 public enum ParentalControlLevel {
 
-	U(4), 
-	PG(8), 
-	A12(12),
-	A15(15), 
-	A18(18);
+	LEVEL_U(4), 
+	LEVEL_PG(8), 
+	LEVEL_12(12),
+	LEVEL_15(15), 
+	LEVEL_18(18);
 	
 	int age;
 	
@@ -20,19 +20,12 @@ public enum ParentalControlLevel {
 		return this.age;
 	}
 	
-	public static ParentalControlLevel fromValue(String value) throws ControlLevelNotFoundException {
-		int intValue = Integer.parseInt(value);
-		for(ParentalControlLevel level : values()) {
-			if(intValue == level.getValue()) {
-				return level;
-			}
-		}
-		throw new ControlLevelNotFoundException(String.format("ParentalControlLevel(%d) is not found.", value));
-	}
-	
 	public static ParentalControlLevel fromName(String name) throws ControlLevelNotFoundException {
 		ParentalControlLevel level = null;
 		try {
+			if(!name.startsWith("LEVEL_")) {
+				name = "LEVEL_" + name;
+			}
 			level = ParentalControlLevel.valueOf(name);			
 		} catch(IllegalArgumentException e) {
 			throw new ControlLevelNotFoundException(String.format("ParentalControlLevel name %s is not found.", name));

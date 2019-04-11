@@ -38,9 +38,9 @@ public class GlobalExceptionHandler {
 	}
 
 	public static class Error {
-		private String code;
-		private String type;
-		private String message;
+		private final String code;
+		private final String type;
+		private final String message;
 
 		public Error(String code, String type, String message) {
 			this.code = code;
@@ -52,24 +52,12 @@ public class GlobalExceptionHandler {
 			return code;
 		}
 
-		public void setCode(String code) {
-			this.code = code;
-		}
-
 		public String getType() {
 			return type;
 		}
 
-		public void setType(String type) {
-			this.type = type;
-		}
-
 		public String getMessage() {
 			return message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
 		}
 
 	}

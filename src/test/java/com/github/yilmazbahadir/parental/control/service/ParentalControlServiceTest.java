@@ -30,8 +30,8 @@ public class ParentalControlServiceTest {
 	@Test
 	public void checkAccessAllowed_MovieHasSameControlLevelWithCustomersPref_ShouldReturnTrue()
 			throws TitleNotFoundException, TechnicalFailureException, ControlLevelNotFoundException {
-		String movieControlLevel = ParentalControlLevel.PG.toString();
-		String customerControlLevel = ParentalControlLevel.PG.toString();
+		String movieControlLevel = ParentalControlLevel.LEVEL_PG.toString();
+		String customerControlLevel = ParentalControlLevel.LEVEL_PG.toString();
 		when(movieService.getParentalControlLevel(anyString())).thenReturn(movieControlLevel);
 
 		boolean controlAccess = movieParentalControlService.checkAccessAllowed("anyString", customerControlLevel);
@@ -41,8 +41,8 @@ public class ParentalControlServiceTest {
 	@Test
 	public void checkAccessAllowed_MovieHasLowerControlLevelThanCustomersPref_ShouldReturnTrue()
 			throws TitleNotFoundException, TechnicalFailureException, ControlLevelNotFoundException {
-		String movieControlLevel = ParentalControlLevel.A12.toString();
-		String customerControlLevel = ParentalControlLevel.A15.toString();
+		String movieControlLevel = ParentalControlLevel.LEVEL_12.toString();
+		String customerControlLevel = ParentalControlLevel.LEVEL_15.toString();
 		when(movieService.getParentalControlLevel(anyString())).thenReturn(movieControlLevel);
 
 		boolean controlAccess = movieParentalControlService.checkAccessAllowed("anyString", customerControlLevel);
@@ -53,8 +53,8 @@ public class ParentalControlServiceTest {
 	@Test
 	public void checkAccessAllowed_MovieHasHigherControlLevelThanCustomersPref_ShouldReturnFalse()
 			throws TitleNotFoundException, TechnicalFailureException, ControlLevelNotFoundException {
-		String movieControlLevel = ParentalControlLevel.A18.toString();
-		String customerControlLevel = ParentalControlLevel.A12.toString();
+		String movieControlLevel = ParentalControlLevel.LEVEL_18.toString();
+		String customerControlLevel = ParentalControlLevel.LEVEL_12.toString();
 		when(movieService.getParentalControlLevel(anyString())).thenReturn(movieControlLevel);
 
 		boolean controlAccess = movieParentalControlService.checkAccessAllowed("anyString", customerControlLevel);
@@ -66,7 +66,7 @@ public class ParentalControlServiceTest {
 	public void checkAccessAllowed_MovieHasHigherControlLevelThanCustomersPref_ExpectTitleNotFoundException()
 			throws TitleNotFoundException, TechnicalFailureException, ControlLevelNotFoundException {
 		String movieId = "moviewithnotitle";
-		String customerControlLevel = ParentalControlLevel.A12.toString();
+		String customerControlLevel = ParentalControlLevel.LEVEL_12.toString();
 		when(movieService.getParentalControlLevel(movieId)).thenThrow(TitleNotFoundException.class);
 
 		movieParentalControlService.checkAccessAllowed(movieId, customerControlLevel);
@@ -76,7 +76,7 @@ public class ParentalControlServiceTest {
 	public void checkAccessAllowed_MovieServiceThrowsTechnicalFailure_ExpectTechnicalFailure()
 			throws TitleNotFoundException, TechnicalFailureException, ControlLevelNotFoundException {
 		String movieId = "moviewithtechnicalfail";
-		String customerControlLevel = ParentalControlLevel.A12.toString();
+		String customerControlLevel = ParentalControlLevel.LEVEL_12.toString();
 		when(movieService.getParentalControlLevel(movieId)).thenThrow(TechnicalFailureException.class);
 
 		movieParentalControlService.checkAccessAllowed(movieId, customerControlLevel);
